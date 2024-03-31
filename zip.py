@@ -15,5 +15,13 @@ midterm1 = [80,20,90]
 midterm2 = [50,10,60]
 midterm3 = [85,65,47]
 
-bestscore = [num for num in zip(midterm1,midterm2,midterm3)]
-print(bestscore)
+bestscore = [max(num) for num in zip(midterm1,midterm2,midterm3)]
+print(list(zip(students,bestscore)))
+
+
+person ={person[0]:max(person[1],person[2],person[3]) for person in zip(students,midterm1,midterm2,midterm3)}
+print(person)
+
+
+personnew = zip(students, map(lambda perscore : max(perscore),zip(midterm1,midterm2,midterm3)))
+print(dict(personnew))
